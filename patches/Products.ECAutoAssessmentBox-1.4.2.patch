@@ -1,0 +1,53 @@
+diff -U 3 -H -d -r -N -x _build -x develop-eggs -x var -x bin -x parts -x '*.egg' -x '*.egg-info' -x .git -x .svn -x '~*~' -x '*~' -X /home/macagua/proyectos/plone/git/canaimagnulinux/colab/.gitignore -- proyectos/plone/git/ploneedu_demos.suite/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/browser/ecaabsettings.py .buildout/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/browser/ecaabsettings.py
+--- proyectos/plone/git/ploneedu_demos.suite/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/browser/ecaabsettings.py	2014-01-20 11:23:09.377952524 -0430
++++ .buildout/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/browser/ecaabsettings.py	2014-01-16 13:45:49.977942832 -0430
+@@ -11,7 +11,12 @@
+ #from Acquisition import aq_inner
+ 
+ from zope import event
+-from zope.app.component.hooks import getSite
++try:
++    # Plone < 4.3
++    from zope.app.component.hooks import getSite
++except ImportError:
++    # Plone >= 4.3
++    from zope.component.hooks import getSite  # NOQA
+ from zope.component import adapts
+ from zope.formlib import form
+ from zope.interface import implements, Interface
+diff -U 3 -H -d -r -N -x _build -x develop-eggs -x var -x bin -x parts -x '*.egg' -x '*.egg-info' -x .git -x .svn -x '~*~' -x '*~' -X /home/macagua/proyectos/plone/git/canaimagnulinux/colab/.gitignore -- proyectos/plone/git/ploneedu_demos.suite/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/browser/vocabularies.py .buildout/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/browser/vocabularies.py
+--- proyectos/plone/git/ploneedu_demos.suite/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/browser/vocabularies.py	2014-01-20 11:23:09.377952524 -0430
++++ .buildout/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/browser/vocabularies.py	2014-01-16 13:47:05.677944059 -0430
+@@ -17,7 +17,12 @@
+ from zope.interface import implements
+ from zope.schema.vocabulary import SimpleVocabulary
+ from zope.schema.vocabulary import SimpleTerm
+-from zope.app.component.hooks import getSite
++try:
++    # Plone < 4.3
++    from zope.app.component.hooks import getSite
++except ImportError:
++    # Plone >= 4.3
++    from zope.component.hooks import getSite  # NOQA
+ from Products.ATContentTypes.interfaces import IFileContent, IImageContent
+ from Products.Archetypes.interfaces.base import IBaseFolder
+ from Products.CMFCore.utils import getToolByName
+diff -U 3 -H -d -r -N -x _build -x develop-eggs -x var -x bin -x parts -x '*.egg' -x '*.egg-info' -x .git -x .svn -x '~*~' -x '*~' -X /home/macagua/proyectos/plone/git/canaimagnulinux/colab/.gitignore -- proyectos/plone/git/ploneedu_demos.suite/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/skins/ecautoassessmentbox_templates/widget_dynamic_data.pt .buildout/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/skins/ecautoassessmentbox_templates/widget_dynamic_data.pt
+--- proyectos/plone/git/ploneedu_demos.suite/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/skins/ecautoassessmentbox_templates/widget_dynamic_data.pt	2014-01-20 11:23:09.377952524 -0430
++++ .buildout/eggs/Products.ECAutoAssessmentBox-1.4.2-py2.7.egg/Products/ECAutoAssessmentBox/skins/ecautoassessmentbox_templates/widget_dynamic_data.pt	2014-01-16 14:28:31.681984359 -0430
+@@ -103,6 +103,7 @@
+         </metal:block>
+       </div>
+ 
++      <tal:comment replace="nothing">
+       <!--
+       <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+         <metal:body metal:fill-slot="widget_body">
+@@ -149,6 +150,7 @@
+         </metal:body>
+       </metal:use>
+       -->
++      </tal:comment>
+     
+     </metal:edit_macro>
+ 

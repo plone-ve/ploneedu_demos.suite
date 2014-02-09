@@ -1,0 +1,16 @@
+--- /home/macagua/proyectos/plone/git/ploneedu_demos.suite/eggs/Products.ECAssignmentBox-1.5.1-py2.7.egg/Products/ECAssignmentBox/browser/ecabsettings.py	2014-01-20 11:22:55.077952293 -0430
++++ /home/macagua/.buildout/eggs/Products.ECAssignmentBox-1.5.1-py2.7.egg/Products/ECAssignmentBox/browser/ecabsettings.py	2014-01-20 15:27:09.214189859 -0430
+@@ -11,7 +11,12 @@
+ #from Acquisition import aq_inner
+ 
+ from zope import event
+-from zope.app.component.hooks import getSite
++try:
++    # Plone < 4.3
++    from zope.app.component.hooks import getSite
++except ImportError:
++    # Plone >= 4.3
++    from zope.component.hooks import getSite  # NOQA
+ from zope.component import adapts
+ from zope.formlib import form
+ from zope.interface import implements, Interface
