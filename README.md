@@ -12,7 +12,7 @@ Development installation
 
 To get a basic development installation running follow the steps below:
 
-.. code::
+::
 
     $ git clone git@github.com:plone-ve/ploneedu_demos.suite.git
     $ cd ploneedu_demos.suite
@@ -24,6 +24,6 @@ CMFBibliographyAT dependency
 
 ``CMFBibliographyAT`` requires some utils to Convert between bibliographic data formats. Before you need to set up the ``bibutils`` package.
 
-.. code::
+::
 
     # aptitude install bibutils
