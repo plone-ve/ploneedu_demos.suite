@@ -5,6 +5,7 @@
     i18n_domain="eduComponents">
 
   <five:registerPackage package="." initialize=".initialize" />
+  <i18n:registerTranslations directory="locales" />
 
   <includeDependencies package="." />
 
