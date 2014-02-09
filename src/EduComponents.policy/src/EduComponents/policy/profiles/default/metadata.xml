@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<metadata>
+  <version>0001</version>
+  <dependencies>
+    <dependency>profile-Products.DataGridField:default</dependency>
+    <dependency>profile-Products.ECAssignmentBox:default</dependency>
+    <dependency>profile-Products.ECAutoAssessmentBox:default</dependency>
+    <dependency>profile-Products.ECLecture:default</dependency>
+    <dependency>profile-Products.ECQuiz:default</dependency>
+  </dependencies>
+</metadata>
