@@ -1,9 +1,13 @@
 PloneEdu demo suite
 ====================
 
-The idea with this buildout configuration is show install
-a Plone latest version with the commons and usefull 
-third-party add-ons Plone for education sector.
+The idea with this buildout configuration is show install a Plone
+latest version with the commons and usefull third-party add-ons
+Plone for education sector.
+
+Plone for Education suite, that shows how improve the effectiveness
+of classes or courses presencial, also offering E-learing solutions,
+create forms with workflow through the Web, etc.
 
 
 Features
@@ -12,11 +16,39 @@ Features
 PloneEdu suite includes some Plone products and configurations 
 like these:
 
-- 
+- eduComponents products.
 
-- 
+  - Products.ECAssignmentBox.
 
-- 
+  - Products.ECAutoAssessmentBox.
+
+  - Products.ECLecture.
+
+  - Products.ECQuiz.
+
+- eduCommons products.
+
+  - collective.imstransport.
+
+  - collective.plonebookmarklets.
+
+  - collective.searchandreplace.
+
+- Workflow Manager products.
+
+  - plone.app.workflowmanager.
+
+  - Products.DCWorkflowGraph.
+
+  - collective.wfautodoc.
+
+- Commons products.
+
+  - Products.FacultyStaffDirectory.
+
+  - collective.contentlicensing.
+
+  - eea.progressbar.
 
 Development installation
 ------------------------
